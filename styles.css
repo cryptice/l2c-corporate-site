@@ -218,3 +218,58 @@ a:hover {
   font-weight: 500;
   letter-spacing: 0.06em;
 }
+
+/* ============================================================
+   Responsive — single breakpoint at 640px
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .nav,
+  .hero,
+  .person,
+  .site-footer {
+    padding-left: var(--pad-x-mobile);
+    padding-right: var(--pad-x-mobile);
+  }
+
+  .divider {
+    margin-left: var(--pad-x-mobile);
+    margin-right: var(--pad-x-mobile);
+  }
+
+  .hero {
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .partners {
+    grid-template-columns: 1fr;
+  }
+
+  .person + .person {
+    border-left: none;
+    border-top: 1px solid var(--divider);
+  }
+
+  .disc {
+    width: 260px;
+    height: 260px;
+    right: -100px;
+    top: -100px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .site-footer .reg {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
