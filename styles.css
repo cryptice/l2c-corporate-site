@@ -25,7 +25,10 @@ html, body {
 }
 
 body {
-  background: var(--bg);
+  background:
+    linear-gradient(rgba(244, 237, 226, 0.55), rgba(244, 237, 226, 0.55)),
+    url('hero.jpg') center/cover no-repeat fixed,
+    var(--bg);
   color: var(--fg);
   font-family: var(--font-sans);
   font-weight: 400;
@@ -85,10 +88,8 @@ a:hover {
 
 /* Hero */
 .hero {
-  position: relative;
   padding-top: 70px;
   padding-bottom: 90px;
-  overflow: hidden;
 }
 
 .hero h1 {
@@ -179,25 +180,6 @@ a:hover {
   letter-spacing: 0.22em;
   color: var(--fg-faint);
   margin-bottom: 14px;
-}
-
-/* Accent disc behind the hero */
-.disc {
-  position: absolute;
-  right: -120px;
-  top: -120px;
-  width: 360px;
-  height: 360px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, var(--accent-from), var(--accent-to));
-  opacity: 0.45;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.hero > *:not(.disc) {
-  position: relative;
-  z-index: 1;
 }
 
 /* Tag list inside each partner section */
