@@ -168,7 +168,6 @@ a:hover {
 }
 
 .nav .brand { font-weight: 600; letter-spacing: 0.18em; }
-.nav .lang { color: var(--fg-faint); }
 
 .eyebrow {
   color: var(--fg-faint);
