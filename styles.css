@@ -273,3 +273,12 @@ a:hover {
     gap: 4px;
   }
 }
+
+/* ============================================================
+   Language visibility — paired with the i18n switcher
+   ============================================================ */
+
+:root[lang="en"] [lang="sv"],
+:root[lang="sv"] [lang="en"] {
+  display: none;
+}
