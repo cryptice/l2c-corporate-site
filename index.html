@@ -14,7 +14,11 @@
 <body>
   <header class="nav">
     <span class="brand">L2 Consulting AB</span>
-    <span class="lang">EN</span>
+    <nav class="lang-switcher" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <button type="button" data-lang="sv" aria-pressed="false">SV</button>
+    </nav>
   </header>
 
   <main>
@@ -78,5 +82,34 @@
       <span>Org.nr 556992-2155</span>
     </span>
   </footer>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const buttons = document.querySelectorAll('.lang-switcher button');
+      const titles = {
+        en: 'L2 Consulting AB',
+        sv: 'L2 Consulting AB'
+      };
+      const descs = {
+        en: 'L2 Consulting AB is a small Swedish consultancy in Älvkarleby — IT, construction, outdoor teaching, and floristry.',
+        sv: 'L2 Consulting AB är ett litet svenskt konsultföretag i Älvkarleby — IT, bygg, utomhuspedagogik och floristik.'
+      };
+      const descMeta = document.querySelector('meta[name="description"]');
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const lang = btn.dataset.lang;
+          if (root.getAttribute('lang') === lang) return;
+          root.setAttribute('lang', lang);
+          document.title = titles[lang];
+          if (descMeta) descMeta.setAttribute('content', descs[lang]);
+          buttons.forEach(function (b) {
+            b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false');
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

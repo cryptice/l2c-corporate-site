@@ -282,3 +282,40 @@ a:hover {
 :root[lang="sv"] [lang="en"] {
   display: none;
 }
+
+/* ============================================================
+   Language switcher in the nav
+   ============================================================ */
+
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-switcher button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: var(--fg-faint);
+  cursor: pointer;
+}
+
+.lang-switcher button[aria-pressed="true"] {
+  color: var(--fg);
+  cursor: default;
+}
+
+.lang-switcher button:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+.lang-sep {
+  color: var(--fg-faint);
+}
